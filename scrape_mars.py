@@ -3,6 +3,8 @@ from splinter import Browser
 import requests
 import os
 import pandas as pd
+import datetime
+import time 
 
 
 def init_browser():
@@ -52,6 +54,8 @@ def scrape_image():
     results = browser.find_by_xpath(xpath)
     img = results[0]
     img.click()
+
+    time.sleep(2)
 
     # Click the 'more info' button on the page to pull up full image
     browser.click_link_by_partial_text('more info')
